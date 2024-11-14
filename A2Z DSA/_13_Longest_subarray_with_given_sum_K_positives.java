@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 //blog : https://takeuforward.org/data-structure/longest-subarray-with-given-sum-k/
-//Question : 
+//Question : https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=longest-sub-array-with-sum-k
 public class _13_Longest_subarray_with_given_sum_K_positives {
 
 	public static void main(String[] args) {
