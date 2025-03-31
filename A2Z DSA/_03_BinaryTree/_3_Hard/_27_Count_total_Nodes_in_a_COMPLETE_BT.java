@@ -44,10 +44,10 @@ public class _27_Count_total_Nodes_in_a_COMPLETE_BT {
 		int right = getHeightRight(root);
 
 		if (left == right) {
-			//if both sides have same height then 2^left +1
+			//if both sides have same height then 2^left - 1 (^ means power)
 			return ((2 << left) - 1);
 		} else {
-			//if both sides have same height then count both sides then + 1
+			//if both sides have not same height then count both sides then + 1
 			return countNodes(root.left) + countNodes(root.right) + 1;
 		}
 	}

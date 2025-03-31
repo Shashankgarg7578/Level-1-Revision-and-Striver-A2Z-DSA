@@ -74,6 +74,8 @@ public class _15_Print_All_Permutations {
 			ans.add(new ArrayList<>(ds));
 			return;
 		}
+		
+		
 		for (int i = index; i < nums.length; i++) {
 			swap(i, index, nums);
 			generatePermutations2(index + 1, nums, ans);

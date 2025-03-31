@@ -26,7 +26,7 @@ public class _14_Subset_Sum_II {
 		ans.add(new ArrayList<Integer>(ds));
 
 		for (int i = ind; i < nums.length; i++) {
-			//condition for don't skip first 
+			// condition for don't skip first
 			if (i != ind && nums[i] == nums[i - 1])
 				continue;
 

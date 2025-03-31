@@ -24,6 +24,8 @@ public class _05_Middle_of_a_LL {
 		head.next.next.next = new Node05(4);
 		head.next.next.next.next = new Node05(5);
 
+		head.next.next.next.next.next = new Node05(6);
+
 		// Find the middle node
 		Node05 middleNode = findMiddle(head);
 

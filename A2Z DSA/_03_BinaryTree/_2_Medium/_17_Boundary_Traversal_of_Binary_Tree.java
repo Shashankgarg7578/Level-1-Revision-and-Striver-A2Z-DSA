@@ -63,7 +63,7 @@ public class _17_Boundary_Traversal_of_Binary_Tree {
 		}
 
 		addLeftBoundary(root, ans);
-		addLeaves(root, ans);
+		addLeaves(root, ans); //Inorder Traversal for leaf node
 		addRightBoundary(root, ans);
 		return ans;
 	}
@@ -112,6 +112,7 @@ public class _17_Boundary_Traversal_of_Binary_Tree {
 
 	}
 
+	//Inorder traversal
 	private static void addLeaves(TreeNode16 root, List<Integer> ans) {
 		if (isLeaf(root)) {
 			ans.add(root.data);

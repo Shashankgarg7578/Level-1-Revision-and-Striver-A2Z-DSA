@@ -8,7 +8,7 @@ import java.util.Map;
 public class _13_Longest_subarray_with_given_sum_K_positives {
 
 	public static void main(String[] args) {
-		int[] a = { 2, 3, 5, 1, 9 ,4,4,1,1};
+		int[] a = { 2, 3, 5, 1, 9, 4, 4, 1, 1 };
 		int k = 10;
 		int len = getLongestSubarray(a, k);
 		System.out.println("The length of the longest subarray is: " + len);
@@ -16,7 +16,7 @@ public class _13_Longest_subarray_with_given_sum_K_positives {
 		int len2 = getLongestSubarray2(a, k);
 		System.out.println("The length of the longest subarray is: " + len2);
 
-		int[] a2 = { 1 ,2 ,3,1,1,1,1,3,3 };
+		int[] a2 = { 1, 2, 3, 1, 1, 1, 1, 3, 3 };
 		int k2 = 6;
 		int len3 = getLongestSubarray3(a2, k2);
 		System.out.println("The length of the longest subarray is: " + len3);
@@ -50,6 +50,10 @@ public class _13_Longest_subarray_with_given_sum_K_positives {
 	// for better understanding :-
 	// https://www.youtube.com/watch?v=frf7qxiN2qU&list=PLgUwDviBIf0rENwdL0nEH0uGom9no0nyB&index=7
 	private static int getLongestSubarray2(int[] arr, int k) {
+		
+//		2, 3, 5, 1, 9, 4, 4, 1, 1
+//		10
+		
 //		this is the Map<Sum, Index>
 		Map<Integer, Integer> preSumMap = new HashMap<Integer, Integer>();
 

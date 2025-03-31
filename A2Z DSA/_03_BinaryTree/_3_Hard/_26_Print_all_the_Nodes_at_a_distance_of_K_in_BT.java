@@ -72,14 +72,19 @@ public class _26_Print_all_the_Nodes_at_a_distance_of_K_in_BT {
 			for (int i = 0; i < qsize; i++) {
 				TreeNode26 tmpNode = queue.poll();
 
+				//Check Left Node
 				if (tmpNode.left != null && vis.get(tmpNode.left) == null) {
 					vis.put(tmpNode.left, true);
 					queue.add(tmpNode.left);
 				}
+				
+				//Check Right Node
 				if (tmpNode.right != null && vis.get(tmpNode.right) == null) {
 					vis.put(tmpNode.right, true);
 					queue.add(tmpNode.right);
 				}
+				
+				//Check Upper Node
 				if (parent_map.get(tmpNode) != null && vis.get(parent_map.get(tmpNode)) == null) {
 					vis.put(parent_map.get(tmpNode), true);
 					queue.offer(parent_map.get(tmpNode));

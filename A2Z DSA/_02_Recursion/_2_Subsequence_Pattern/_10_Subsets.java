@@ -6,10 +6,10 @@ import java.util.List;
 public class _10_Subsets {
 	public static void main(String[] args) {
 
-		int[] nums = {1,2,3};
+		int[] nums = { 1, 2, 3 };
 		List<List<Integer>> ans = subsets(nums);
-		
-		for(List<Integer> temp :ans) {
+
+		for (List<Integer> temp : ans) {
 			System.out.println(temp);
 		}
 	}

@@ -19,6 +19,7 @@ class DoublyNode19 {
 }
 
 public class _19_Delete_all_occurrences_of_a_key_in_DLL {
+	
 	private static DoublyNode19 convertArr2DLL(int[] arr) {
 		DoublyNode19 head = new DoublyNode19(arr[0]);
 
@@ -58,12 +59,13 @@ public class _19_Delete_all_occurrences_of_a_key_in_DLL {
 	}
 
 	public static DoublyNode19 deleteAllOccurOfX(DoublyNode19 head, int x) {
+
 		DoublyNode19 temp = head;
 
 		while (temp != null) {
 			if (temp.data == x) {
-				
-				//if head node is x which we have to delete
+
+				// if head node is x which we have to delete
 				if (temp == head) {
 					head = temp.next;
 				}

@@ -4,7 +4,10 @@ package _01_Arrays._2_Medium;
 // Question : https://leetcode.com/problems/set-matrix-zeroes/
 public class _23_Set_Matrix_Zeros {
 	public static void main(String[] args) {
-		int[][] matrix1 = { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
+		int[][] matrix1 = { { 1, 1, 1 }, 
+				            { 1, 0, 1 }, 
+				            { 1, 1, 1 } };
+		
 		int n1 = matrix1.length;
 		int m1 = matrix1[0].length;
 

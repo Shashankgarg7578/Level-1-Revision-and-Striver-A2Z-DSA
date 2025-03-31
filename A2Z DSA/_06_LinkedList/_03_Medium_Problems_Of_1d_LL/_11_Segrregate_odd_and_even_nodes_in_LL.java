@@ -69,6 +69,8 @@ public class _11_Segrregate_odd_and_even_nodes_in_LL {
 		if (temp != null) {
 			list.add(temp.data);
 		}
+		
+		
 		temp = head.next;
 		// add even elements
 		while (temp != null && temp.next != null) {

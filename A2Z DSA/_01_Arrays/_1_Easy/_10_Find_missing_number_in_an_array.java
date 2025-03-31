@@ -103,7 +103,7 @@ public class _10_Find_missing_number_in_an_array {
 			xor2 = xor2 ^ arr[i]; // XOR of array elements
 			xor1 = xor1 ^ (i + 1); // XOR up to [1...N-1]
 		}
-		xor1 = xor1 ^ n; // XOR up to [1...N]
+		xor1 = xor1 ^ n; // XOR up to [1...N], so this is for last element 
 
 		return (xor1 ^ xor2); // the missing number
 

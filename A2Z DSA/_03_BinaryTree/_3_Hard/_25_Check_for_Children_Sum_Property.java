@@ -48,6 +48,8 @@ public class _25_Check_for_Children_Sum_Property {
 		System.out.println();
 	}
 
+	//while going down increase values if they are small
+	
 	private static void changeTree(TreeNode25 root) {
 		if (root == null) {
 			return;

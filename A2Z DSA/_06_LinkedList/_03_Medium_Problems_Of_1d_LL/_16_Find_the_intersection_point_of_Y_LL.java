@@ -58,6 +58,7 @@ public class _16_Find_the_intersection_point_of_Y_LL {
 		printList(head1);
 		System.out.print("List2: ");
 		printList(head2);
+		
 		// checking if intersection is present
 		Node16 answerNode16 = intersectionPresentByHeadsChange(head1, head2);
 		if (answerNode16 == null)
@@ -70,6 +71,7 @@ public class _16_Find_the_intersection_point_of_Y_LL {
 	// Brute force by Set
 	static Node16 intersectionPresent(Node16 head1, Node16 head2) {
 		HashSet<Node16> st = new HashSet<Node16>();
+
 		Node16 temp = head1;
 		while (temp != null) {
 			st.add(temp);
@@ -131,7 +133,7 @@ public class _16_Find_the_intersection_point_of_Y_LL {
 		return t1;
 	}
 
-	// Optimal (Change heads tograther when null)
+	// Optimal (Change heads together when null)
 	static Node16 intersectionPresentByHeadsChange(Node16 head1, Node16 head2) {
 
 		if (head1 == null || head2 == null) {
@@ -156,7 +158,6 @@ public class _16_Find_the_intersection_point_of_Y_LL {
 			if (t2 == null) {
 				t2 = head1;
 			}
-
 		}
 
 		return t1;

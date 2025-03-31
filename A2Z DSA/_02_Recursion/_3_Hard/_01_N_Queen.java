@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class _01_N_Queen {
-	
 
 	public static void main(String args[]) {
 		int N = 4;
@@ -21,12 +20,14 @@ public class _01_N_Queen {
 		}
 
 	}
-	
+
 	public static List<List<String>> solveNQueens(int n) {
 		char[][] board = new char[n][n];
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < n; j++)
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
 				board[i][j] = '.';
+			}
+		}
 		List<List<String>> res = new ArrayList<List<String>>();
 		dfs(0, board, res);
 		return res;
@@ -38,6 +39,7 @@ public class _01_N_Queen {
 			return;
 		}
 
+		//we are filling column wise (--->)
 		for (int row = 0; row < board.length; row++) {
 			if (validate(board, row, col)) {
 				board[row][col] = 'Q';
@@ -57,6 +59,8 @@ public class _01_N_Queen {
 	}
 
 	static boolean validate(char[][] board, int row, int col) {
+		
+		//back UP-diagonal check
 		int duprow = row;
 		int dupcol = col;
 		while (row >= 0 && col >= 0) {
@@ -66,6 +70,7 @@ public class _01_N_Queen {
 			col--;
 		}
 
+		//back straight-diagonal check
 		row = duprow;
 		col = dupcol;
 		while (col >= 0) {
@@ -74,6 +79,7 @@ public class _01_N_Queen {
 			col--;
 		}
 
+		//back down-diagonal check
 		row = duprow;
 		col = dupcol;
 		while (col >= 0 && row < board.length) {

@@ -30,9 +30,9 @@ public class _24_LCA_in_BT {
 		root.left.right.left = new TreeNode23(7);
 		root.left.right.right = new TreeNode23(4);
 
-		TreeNode23 p = root.right.left;
+		TreeNode23 p = root.left.right.left;
 
-		TreeNode23 q = root.left.right.left;
+		TreeNode23 q = root.left.right.right;
 
 		TreeNode23 ans = lowestCommonAncestor(root, p, q);
 

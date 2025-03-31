@@ -69,6 +69,7 @@ public class _24_Maximum_width_of_a_BT {
 			int first = 0, last = 0;
 
 			for (int i = 0; i < qsize; i++) {
+				//for always start new level by 0, because if we map all nodes by number then it will exceed
 				int currIdx = queue.peek().num - mmin;
 
 				TreeNode24 curNode = queue.peek().node;
@@ -83,10 +84,12 @@ public class _24_Maximum_width_of_a_BT {
 					last = currIdx;
 				}
 
+				//add left child by formula
 				if (curNode.left != null) {
 					queue.add(new Pair(curNode.left, 2 * currIdx + 1));
 				}
 
+				//add right child by formula
 				if (curNode.right != null) {
 					queue.add(new Pair(curNode.right, 2 * currIdx + 2));
 				}

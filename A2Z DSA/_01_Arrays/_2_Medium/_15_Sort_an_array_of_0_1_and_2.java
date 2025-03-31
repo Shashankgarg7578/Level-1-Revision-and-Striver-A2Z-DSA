@@ -24,10 +24,10 @@ public class _15_Sort_an_array_of_0_1_and_2 {
 			System.out.print(arr2.get(i) + " ");
 		}
 		System.out.println();
-		
+
 		int n3 = 6;
 		int[] arr3 = { 0, 2, 1, 2, 0, 1 };
- 		sortArray3(arr3, n3);
+		sortArray3(arr3, n3);
 		System.out.println("After sorting:");
 		for (int i = 0; i < n3; i++) {
 			System.out.print(arr3[i] + " ");
@@ -73,35 +73,32 @@ public class _15_Sort_an_array_of_0_1_and_2 {
 		}
 	}
 
-	
 	// Optimal
 //	Time Complexity: O(N) 
 //	Space Complexity: O(1)
 	private static void sortArray3(int[] arr, int n) {
 		int mid = 0;
-		int low= 0;
-		int high = arr.length -1;
-				
-		while(mid <= high) {
-			if(arr[mid] == 0) {
+		int low = 0;
+		int high = arr.length - 1;
+//		0, 2, 1, 2, 0, 1 	
+		while (mid <= high) {
+			if (arr[mid] == 0) {
 				int temp = arr[low];
 				arr[low] = arr[mid];
 				arr[mid] = temp;
-				
+
 				low++;
 				mid++;
-			}else if(arr[mid] == 1) {
+			} else if (arr[mid] == 1) {
 				mid++;
-			}else if(arr[mid] == 2) {
+			} else if (arr[mid] == 2) {
 				int temp = arr[mid];
 				arr[mid] = arr[high];
 				arr[high] = temp;
 				high--;
 			}
-			
 		}
-		
+
 	}
 
-	
 }

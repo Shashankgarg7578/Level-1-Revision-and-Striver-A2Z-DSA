@@ -14,14 +14,14 @@ public class _02_Second_Largest_Element_in_an_Array_without_Sorting {
 		System.out.println();
 
 		System.out.println("Better Solution");
-		int[] arr2 = { 1,2,4,7,7,5 };
+		int[] arr2 = { 1, 1, 2, 4, 7, 7, 5 };
 		int m = arr2.length;
 		getElements2(arr2, m);
 
 		System.out.println();
 
 		System.out.println("Optimal Solution");
-		int[] arr3 = { 1, 2, 4, 6, 7, 5 };
+		int[] arr3 = { 1, 2, 4, 6, 8, 7 };
 		int o = arr3.length;
 		getElements3(arr3, o);
 	}
@@ -70,13 +70,13 @@ public class _02_Second_Largest_Element_in_an_Array_without_Sorting {
 		int secondSmallest = Integer.MAX_VALUE;
 		int secondLargest = Integer.MIN_VALUE;
 		for (int i = 0; i < arr.length; i++) {
-			
-			//for second largest
+
+			// for second largest
 			if (arr[i] > secondLargest && max > arr[i]) {
 				secondLargest = arr[i];
 			}
 
-			//for second smallest
+			// for second smallest
 			if (arr[i] < secondSmallest && min < arr[i]) {
 				secondSmallest = arr[i];
 			}
@@ -87,6 +87,7 @@ public class _02_Second_Largest_Element_in_an_Array_without_Sorting {
 
 	}
 
+//	{ 1, 2, 4, 6, 8, 7 }
 	// Optimal approach.
 //	Time Complexity: O(N), Single-pass solution
 //	Space Complexity: O(1)

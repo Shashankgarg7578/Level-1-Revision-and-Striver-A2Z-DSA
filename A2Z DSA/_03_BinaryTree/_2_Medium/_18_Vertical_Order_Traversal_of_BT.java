@@ -26,7 +26,9 @@ class TreeNode17 {
 }
 
 public class _18_Vertical_Order_Traversal_of_BT {
+	
 	private static void printResult(List<List<Integer>> result) {
+		System.out.println();
 		for (List<Integer> level : result) {
 			for (int node : level) {
 				System.out.print(node + " ");
@@ -52,7 +54,8 @@ public class _18_Vertical_Order_Traversal_of_BT {
 		List<List<Integer>> verticalTraversal = findVertical(root);
 
 		// Print the result
-		System.out.print("Vertical Traversal: ");
+		System.out.println();
+		System.out.print("Ans => Vertical Traversal: ");
 		printResult(verticalTraversal);
 	}
 

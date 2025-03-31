@@ -22,8 +22,7 @@ public class _12_Combination_Sum_II {
 		return ans;
 	}
 
-	private static void findCombinationSum2(int ind, int[] candidates, int target, List<List<Integer>> ans,
-			ArrayList<Integer> ds) {
+	private static void findCombinationSum2(int ind, int[] candidates, int target, List<List<Integer>> ans, ArrayList<Integer> ds) {
 		if (target == 0) {
 			ans.add(new ArrayList<Integer>(ds));
 			return;

@@ -58,7 +58,7 @@ public class _21_Leaders_in_Array_problem {
 	// Space Complexity: O(N)
 	private static ArrayList<Integer> printLeadersBruteForce2(int[] arr, int n) {
 		ArrayList<Integer> ansList = new ArrayList<Integer>();
-
+//		10, 22, 12, 3, 0, 6 
 		int max = arr[arr.length - 1];
 		ansList.add(max);
 

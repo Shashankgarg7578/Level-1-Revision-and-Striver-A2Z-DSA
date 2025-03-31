@@ -4,7 +4,9 @@ package _01_Arrays._2_Medium;
 //Question : https://leetcode.com/problems/rotate-image/
 public class _24_Rotate_Matrix_by_90_degrees {
 	public static void main(String[] args) {
-		int arr[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		int arr[][] = { { 1, 2, 3 }, 
+				        { 4, 5, 6 }, 
+				        { 7, 8, 9 } };
 		int rotated[][] = rotate(arr);
 		System.out.println("Rotated Image");
 		for (int i = 0; i < rotated.length; i++) {

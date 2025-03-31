@@ -15,8 +15,8 @@ public class _03_Print_1_to_N_using_recursion {
 			return;
 		}
 
-		System.out.println(i);
 		i++;
+		System.out.println(i);
 		func(i, n);
 	}
 

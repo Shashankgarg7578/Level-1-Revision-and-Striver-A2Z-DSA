@@ -76,6 +76,7 @@ public class _20_Bottom_View_of_BT {
 
 			int level = pair.line;
 
+			//only this change in previous Question TopView
 			map.put(level, node.data);
 
 			if (node.left != null) {

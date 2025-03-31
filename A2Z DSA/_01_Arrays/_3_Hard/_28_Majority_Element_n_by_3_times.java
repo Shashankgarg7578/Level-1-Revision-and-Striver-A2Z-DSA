@@ -140,23 +140,3 @@ public class _28_Majority_Element_n_by_3_times {
     }
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

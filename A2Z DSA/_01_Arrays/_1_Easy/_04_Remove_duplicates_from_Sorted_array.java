@@ -44,6 +44,7 @@ public class _04_Remove_duplicates_from_Sorted_array {
 	}
 
 	// Optimal
+//	 { 1, 1, 2, 2, 2, 3, 3 };
 	private static int removeDuplicates2(int[] arr2) {
 
 		int i = 0;

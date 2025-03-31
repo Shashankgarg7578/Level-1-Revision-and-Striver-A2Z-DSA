@@ -37,8 +37,11 @@ public class _37_Maximum_Product_Subarray {
 	// Space Complexity: O(1)
 	static int maxProductSubArray2(int arr[]) {
 		int result = arr[0];
+
 		for (int i = 0; i < arr.length - 1; i++) {
+
 			int p = arr[i];
+
 			for (int j = i + 1; j < arr.length; j++) {
 
 				// this is all number product
@@ -51,6 +54,7 @@ public class _37_Maximum_Product_Subarray {
 			}
 			result = Math.max(result, p);
 		}
+
 		return result;
 	}
 }

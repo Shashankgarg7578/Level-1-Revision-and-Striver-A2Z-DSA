@@ -51,7 +51,9 @@ public class _22_Reverse_LL_in_given_of_given_size_K {
 	private static Node22 kReverse(Node22 head, int k) {
 
 		Node22 temp = head;
+		
 		Node22 prevLast = null;
+		
 		while (temp != null) {
 			Node22 kthNode = getKthNode(temp, k);
 

@@ -21,7 +21,7 @@ public class _18_Rearrange_the_array_in_alternating_positive_and_negative_items 
 		// this is Optimal approach for showing even , odd numbers alternatively, while
 		// positive/negative occurrence are same.
 		int n2 = 4;
-		int A2[] = { 1, 2, -4,2, -5 };
+		int A2[] = { 1, 2, -4, 2, -5 };
 		int[] ans2 = RearrangebySign2(A2, n2);
 		for (int i = 0; i < n2; i++) {
 			System.out.print(ans2[i] + " ");

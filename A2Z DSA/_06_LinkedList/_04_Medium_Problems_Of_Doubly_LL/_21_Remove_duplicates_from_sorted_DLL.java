@@ -45,7 +45,7 @@ public class _21_Remove_duplicates_from_sorted_DLL {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 1, 1,1,2,3,3,4 };
+		int[] arr = { 1, 1, 1, 2, 3, 3, 4 };
 
 		DoublyNode21 head = convertArr2DLL(arr);
 		System.out.print("Orignal DLL: ");
@@ -79,21 +79,4 @@ public class _21_Remove_duplicates_from_sorted_DLL {
 		return head;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

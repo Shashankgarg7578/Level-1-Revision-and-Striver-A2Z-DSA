@@ -37,19 +37,19 @@ public class _12_Remove_Nth_node_from_the_back_of_the_LL {
 
 		// Delete the Nth node from
 		// the end and print the modified linked list
-		head = DeleteNthNode12fromEnd(head, N);
+		head = DeleteNthNodefromEnd(head, N);
 		printLL(head);
 
 		System.out.println();
 		
 		// Delete the Nth node from
 		// the end and print the modified linked list
-		head = DeleteNthNode12fromEndBySlowAndFast(head, N);
+		head = DeleteNthNodefromEndBySlowAndFast(head, N);
 		printLL(head);
 	}
 
 	// Brute force
-	private static Node12 DeleteNthNode12fromEnd(Node12 head, int N) {
+	private static Node12 DeleteNthNodefromEnd(Node12 head, int N) {
 		if (head == null) {
 			return null;
 		}
@@ -91,7 +91,7 @@ public class _12_Remove_Nth_node_from_the_back_of_the_LL {
 	}
 
 	// Brute force
-	private static Node12 DeleteNthNode12fromEndBySlowAndFast(Node12 head, int N) {
+	private static Node12 DeleteNthNodefromEndBySlowAndFast(Node12 head, int N) {
 		// Create two pointers, fastp and slowp
 		Node12 fastp = head;
 		Node12 slowp = head;
