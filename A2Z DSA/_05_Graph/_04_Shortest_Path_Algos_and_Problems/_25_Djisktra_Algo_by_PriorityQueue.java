@@ -78,7 +78,8 @@ public class _25_Djisktra_Algo_by_PriorityQueue {
 		System.out.println();
 
 	}
-
+	
+//https://www.youtube.com/watch?v=V6H1qAeB-l4&list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn&index=32
 	private static int[] dijkstra(int v, ArrayList<ArrayList<ArrayList<Integer>>> adj, int s) {
 
 		// for sorting on the basis of distance
