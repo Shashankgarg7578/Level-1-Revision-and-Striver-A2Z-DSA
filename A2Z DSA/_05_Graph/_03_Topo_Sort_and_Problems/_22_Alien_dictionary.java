@@ -7,7 +7,8 @@ import java.util.Queue;
 
 public class _22_Alien_dictionary {
 	public static void main(String[] args) {
-		int N = 5, K = 4;
+		int N = 5; // number of elements in array
+		int K = 4; //number of diff chars
 		String[] dict = { "baa", "abcd", "abca", "cab", "cad" };
 
 		String ans = findOrder(dict, N, K);
@@ -25,6 +26,7 @@ public class _22_Alien_dictionary {
 			adj.add(new ArrayList<>());
 		}
 
+//		compare 2-2 elements like bubble sort make adjList(Graph)
 		for (int i = 0; i < N - 1; i++) {
 			String s1 = dict[i];
 			String s2 = dict[i + 1];
@@ -37,6 +39,7 @@ public class _22_Alien_dictionary {
 			}
 		}
 
+		//newly made graph or adjList find topoSort
 		List<Integer> topo = topoSort(K, adj);
 		String ans = "";
 		for (int it : topo) {
