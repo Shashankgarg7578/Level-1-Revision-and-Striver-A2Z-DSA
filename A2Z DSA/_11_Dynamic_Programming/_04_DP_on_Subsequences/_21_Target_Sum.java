@@ -1,27 +1,27 @@
 package _11_Dynamic_Programming._04_DP_on_Subsequences;
 
 import java.util.Arrays;
-import java.util.List;
 
-// we have to find how many subsets we have which have (s1 - s2 = D) and it follows (S1 > S2)
-
-// S1 = totalSum - S2
-
-// totalSum - S2 - S2 = D //put s1 value in 1st equation
-// totalSum - D = 2 * S2
-// S2 = (totalSum - D) / 2  //it is same Q. 17
-
-public class _18_Count_Partitions_with_Given_Difference {
+//this problem is related to Q. 18 subset sum , count s1-s2=D
+public class _21_Target_Sum {
 
 	public static void main(String args[]) {
+		
+		//we have to give every value is a single sign - or + and final value is target value.
+		int arr[] = { 1, 2, 3, 1 };
+		int target = 3;
 
-		int arr[] = { 5, 2, 6, 4 };
 		int n = arr.length;
-		int d = 3;
 
-		System.out.println("The number of subsets found are " + countPartitions(n, d, arr));
+		// Call the targetSum function and print the result
+		System.out.println("The number of ways found is " + targetSum(n, target, arr));
 	}
 
+	private static int targetSum(int n, int target, int[] arr) {
+		return countPartitions(n, target, arr);
+	}
+
+	// These below are Q18
 	private static int countPartitions(int n, int d, int[] arr) {
 
 		int totSum = 0;
