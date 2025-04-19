@@ -6,8 +6,8 @@ public class _19_01Knapsack {
 	public static void main(String args[]) {
 		int wt[] = { 1, 2, 4, 5 };
 		int val[] = { 5, 4, 8, 6 };
-		int W = 5;
-		int n = wt.length;
+		int W = 5; // bag weight
+		int n = wt.length; // items in room
 
 		// Calculate and print the maximum value of items the thief can steal
 		System.out.println("The Maximum value of items the thief can steal is : " + knapsack01(wt, val, n, W));

@@ -6,11 +6,13 @@ import java.util.Arrays;
 public class _21_Target_Sum {
 
 	public static void main(String args[]) {
-		
-		//we have to give every value is a single sign - or + and final value is target value.
+
+		// we have to give every value is a single sign - or + and final value is target value.
 		int arr[] = { 1, 2, 3, 1 };
 		int target = 3;
-
+		// + - + + = 1 - 2 + 3 + 1 = 3
+		// 1 ,2, 3, 1
+		// - + + - = -1 + 2 + 3 -1 = 3
 		int n = arr.length;
 
 		// Call the targetSum function and print the result
