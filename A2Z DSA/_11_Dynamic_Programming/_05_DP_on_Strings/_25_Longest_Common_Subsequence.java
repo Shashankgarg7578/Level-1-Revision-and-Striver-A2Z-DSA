@@ -1,7 +1,7 @@
 package _11_Dynamic_Programming._05_DP_on_Strings;
 
 import java.util.Arrays;
-
+//subsequence :-it means order can be contiguous or non-contiguous but maintain the order
 //subsequence of "abc":- ["", a, b, c, ab, bc, ac, abc] 
 
 //we have 2 Strings and we have to find longest 'same' subsequence.
