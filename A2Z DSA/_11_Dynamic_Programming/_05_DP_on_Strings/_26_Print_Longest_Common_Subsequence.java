@@ -35,6 +35,7 @@ public class _26_Print_Longest_Common_Subsequence {
 			}
 		}
 
+		// new code for pint elements
 		int len = dp[n][m];
 		int i = n;
 		int j = m;
