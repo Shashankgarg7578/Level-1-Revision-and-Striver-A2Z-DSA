@@ -6,7 +6,7 @@ public class _32_Distinct_Subsequences {
 	public static void main(String args[]) {
 
 		// this is little different from previous problem.
-
+        //here we have to find out how many times s2 will occour in s1
 		String s1 = "babgbag";
 		String s2 = "bag";
 
