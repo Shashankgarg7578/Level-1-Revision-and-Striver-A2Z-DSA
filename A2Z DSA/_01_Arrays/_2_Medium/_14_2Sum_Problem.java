@@ -89,7 +89,8 @@ public class _14_2Sum_Problem {
 				right--;
 			} else if (arr[left] + arr[right] == target) {
 				
-				System.out.println(left +"- -" + right);
+				//because we are sorting thats why we arenot able to give correct index
+//				System.out.println(left +"- -" + right);
 				
 				return "YES";
 			}
