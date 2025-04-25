@@ -18,6 +18,7 @@ public class _36_Buy_and_Sell_Stock_II {
 		System.out.println("The maximum profit that can be generated is " + getMaximumProfit02(Arr, n));
 		System.out.println("The maximum profit that can be generated is " + getMaximumProfit03(Arr, n));
 		System.out.println("The maximum profit that can be generated is " + getMaximumProfit04(Arr, n));
+		System.out.println("The maximum profit that can be generated is " + getMaximumProfit05(Arr, n));
 
 	}
 
@@ -31,7 +32,9 @@ public class _36_Buy_and_Sell_Stock_II {
 		}
 
 		// Calculate the maximum profit using the recursive function
-		long ans = getMaximumProfitUtil01(Arr, 0, 0, n);
+		//1 means we can buy
+		//0 means we cann't buy means sell only
+		long ans = getMaximumProfitUtil01(Arr, 0, 1, n);
 
 		return ans;
 	}
@@ -44,12 +47,12 @@ public class _36_Buy_and_Sell_Stock_II {
 
 		long profit = 0;
 
-		if (buy == 0) { // 0 means we can buy the stock
-			profit = Math.max(-arr[ind] + getMaximumProfitUtil01(arr, ind + 1, 1, n), // take
-					0 + getMaximumProfitUtil01(arr, ind + 1, 0, n)); // notTake
-		} else {// 1 means we can buy the stock
-			profit = Math.max(arr[ind] + getMaximumProfitUtil01(arr, ind + 1, 0, n),
-					0 + getMaximumProfitUtil01(arr, ind + 1, 1, n));
+		if (buy == 1) { // 1 means we can buy the stock
+			profit = Math.max(-arr[ind] + getMaximumProfitUtil01(arr, ind + 1, 0, n), // take :- we buy
+					0 + getMaximumProfitUtil01(arr, ind + 1, 1, n)); // notTake :- we don't buy move to next day
+		} else {// 0 means we cann't buy the stock we sell only
+			profit = Math.max(arr[ind] + getMaximumProfitUtil01(arr, ind + 1, 1, n),
+					0 + getMaximumProfitUtil01(arr, ind + 1, 0, n));
 		}
 
 		return profit;
@@ -70,7 +73,11 @@ public class _36_Buy_and_Sell_Stock_II {
 		}
 
 		// Calculate the maximum profit using the recursive function
-		long ans = getMaximumProfitUtil02(Arr, 0, 0, n, dp);
+
+		// Calculate the maximum profit using the recursive function
+		//1 means we can buy
+		//0 means we cann't buy means sell only
+		long ans = getMaximumProfitUtil02(Arr, 0, 1, n, dp);
 
 		return ans;
 	}
@@ -87,14 +94,14 @@ public class _36_Buy_and_Sell_Stock_II {
 
 		long profit = 0;
 
-		if (buy == 0) { // 0 means we can buy the stock
-			profit = Math.max(-arr[ind] + getMaximumProfitUtil02(arr, ind + 1, 1, n, dp), // take
-					0 + getMaximumProfitUtil02(arr, ind + 1, 0, n, dp)); // notTake
-		} else {// 1 means we can buy the stock
-			profit = Math.max(arr[ind] + getMaximumProfitUtil02(arr, ind + 1, 0, n, dp),
-					0 + getMaximumProfitUtil02(arr, ind + 1, 1, n, dp));
+		if (buy == 1) { // 1 means we can buy the stock
+			profit = Math.max(-arr[ind] + getMaximumProfitUtil01(arr, ind + 1, 0, n), // take :- we buy
+					0 + getMaximumProfitUtil01(arr, ind + 1, 1, n)); // notTake :- we don't buy move to next day
+		} else {// 0 means we cann't buy the stock we sell only
+			profit = Math.max(arr[ind] + getMaximumProfitUtil01(arr, ind + 1, 1, n),
+					0 + getMaximumProfitUtil01(arr, ind + 1, 0, n));
 		}
-
+		
 		return dp[ind][buy] = profit;
 	}
 
@@ -118,20 +125,20 @@ public class _36_Buy_and_Sell_Stock_II {
 		for (int ind = n - 1; ind >= 0; ind--) {
 			for (int buy = 0; buy <= 1; buy++) {
 				long profit = 0;
-				if (buy == 0) { // 0 means we can buy the stock
-					profit = Math.max(-arr[ind] + dp[ind + 1][1], // take
-							0 + dp[ind + 1][0]); // notTake
-				} else {// 1 means we can buy the stock
-					profit = Math.max(arr[ind] + dp[ind + 1][0], 0 + dp[ind + 1][1]);
+				if (buy == 1) { // 1 means we can buy the stock
+					profit = Math.max(-arr[ind] + dp[ind + 1][0], // take
+							0 + dp[ind + 1][1]); // notTake
+				} else {// 0 means we cann't buy the stock only sell
+					profit = Math.max(arr[ind] + dp[ind + 1][1], 0 + dp[ind + 1][0]);
 				}
 				dp[ind][buy] = profit;
 			}
 		}
 
-		return dp[0][0];
+		return dp[0][1];
 	}
 
-	// Tabulation
+	// Tabulation + Space Optimization
 	// Time Complexity: O(N*2)
 	// Space Complexity: O(1)
 	static long getMaximumProfit04(long[] arr, int n) {
@@ -140,24 +147,52 @@ public class _36_Buy_and_Sell_Stock_II {
 			return 0;
 		}
 
-		long[] ahead = new long[2];
-		long[] curr = new long[2];
+		long[] ahead = new long[2]; // 0th index is aheadNotBuy, 1st index is aheadBuy
+		long[] curr = new long[2];// 0th index is currNotBuy, 1st index is currBuy
 
 		for (int ind = n - 1; ind >= 0; ind--) {
 			for (int buy = 0; buy <= 1; buy++) {
 				long profit = 0;
-				if (buy == 0) { // 0 means we can buy the stock
-					profit = Math.max(-arr[ind] + ahead[1], // take
-							0 + ahead[0]); // notTake
-				} else {// 1 means we can buy the stock
-					profit = Math.max(arr[ind] + ahead[0], 0 + ahead[1]);
+				if (buy == 1) { // 1 means we can buy the stock
+					profit = Math.max(-arr[ind] + ahead[0], // take
+							0 + ahead[1]); // notTake
+				} else {// 0 means we cann't buy the stock only sell
+					profit = Math.max(arr[ind] + ahead[1], 0 + ahead[0]);
 				}
 				curr[buy] = profit;
 			}
 			ahead = curr;
 		}
 
-		return curr[0];
+		return ahead[1];
+	}
+
+	// Tabulation + Space Optimization with only variables
+	// Time Complexity: O(N*2)
+	// Space Complexity: O(1)
+	static long getMaximumProfit05(long[] arr, int n) {
+
+		if (n == 0) {
+			return 0;
+		}
+
+//		long[] ahead = new long[2]; // 0th index is aheadNotBuy, 1st index is aheadBuy
+//		long[] curr = new long[2];// 0th index is currNotBuy, 1st index is currBuy
+
+		long aheadNotBuy = 0, aheadBuy = 0;
+		long currNotBuy = 0, currBuy = 0;
+
+		for (int ind = n - 1; ind >= 0; ind--) {
+			currBuy = Math.max(-arr[ind] + aheadNotBuy, // take
+					0 + aheadBuy); // notTake
+
+			currNotBuy = Math.max(arr[ind] + aheadBuy, 0 + aheadNotBuy);
+
+			aheadBuy = currBuy;
+			aheadNotBuy = currNotBuy;
+		}
+
+		return aheadBuy;
 	}
 
 }
