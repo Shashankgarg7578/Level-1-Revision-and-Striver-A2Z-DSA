@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 public class _36_Buy_and_Sell_Stock_II {
 
-	// give me total profit
-	// you can buy and sell any number of times.
-	// but the thing is first if you buy the you have to sell then only you are able
-	// to buy again.
-
 	public static void main(String[] args) {
+
+		// give me total profit
+		// you can buy and sell any number of times.
+		// but the thing is first if you buy the you have to sell then only you are able to buy again.
+
 		int n = 6;
 		long[] Arr = { 7, 1, 5, 3, 6, 4 };
 
