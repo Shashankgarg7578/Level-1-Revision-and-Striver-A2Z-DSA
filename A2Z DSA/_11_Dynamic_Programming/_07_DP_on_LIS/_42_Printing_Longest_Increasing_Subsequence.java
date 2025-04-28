@@ -13,11 +13,9 @@ public class _42_Printing_Longest_Increasing_Subsequence {
 
 		int n = arr.length;
 
-		System.out
-				.println("The length of the longest increasing subsequence is " + longestIncreasingSubsequence(arr, n));
+		System.out.println("The length of the longest increasing subsequence is " + longestIncreasingSubsequence(arr, n));
 
-		System.out.println(
-				"The length of the longest increasing subsequence is " + longestIncreasingSubsequence02(arr, n));
+		System.out.println("The length of the longest increasing subsequence is " + longestIncreasingSubsequence02(arr, n));
 
 	}
 
@@ -75,6 +73,8 @@ public class _42_Printing_Longest_Increasing_Subsequence {
 			}
 		}
 
+		
+		//Backtrack and find the ans
 		ArrayList<Integer> temp = new ArrayList<>();
 
 		temp.add(arr[lastIndex]);
