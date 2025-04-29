@@ -102,8 +102,8 @@ public class _14_Sort_LL {
 		Node14 left = head;
 
 		// Recursively sort the left and right halves
-		left = sortLL(left);
-		right = sortLL(right);
+		left = sortLLByMergeSort(left);
+		right = sortLLByMergeSort(right);
 
 		// Merge the sorted halves using the
 		// mergeTwoSortedLinkedLists function
